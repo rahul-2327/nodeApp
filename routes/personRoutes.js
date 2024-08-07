@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
     res.status(200).json(persons);
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: "internal pointer variable" });
+    res.status(500).json({ error: "internal server error" });
   }
 });
 

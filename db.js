@@ -1,9 +1,13 @@
 const mongoose = require("mongoose");
-const URL = "mongodb://localhost:27017/chatapp";
+require("dotenv").config();
+// const URL = process.env.DB_LOCALURL;
+const URL = process.env.DB_URL;
 
 mongoose.connect(URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  // useCreateIndex: true,
+  // useFindAndModify: false,
 });
 
 const db = mongoose.connection;
