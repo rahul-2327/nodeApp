@@ -66,8 +66,15 @@ router.put("/:id", async (req, res) => {
 });
 
 router.delete("/:id", async (req, res) => {
-  try{
-    
+  try {
+    const idToDelete = req.params.id;
+    const response = await Menu.deleteOne({ _id: idToDelete });
+    if (!response) {
+      console.error("error 404 bad request: Invalid request type ", response);
+      res.status(404).json({ message: "Invalid delete Id" });
+    }
+    console.log("entry deleted successfully ", response);
+    res.status(200).json(response);
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: "internal server erro" });
