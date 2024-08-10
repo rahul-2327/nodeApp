@@ -29,6 +29,14 @@ const personSchema = new mongoose.Schema({
     type: Number,
     requried: true,
   },
+  username: {
+    requried: true,
+    type: String,
+  },
+  password: {
+    requried: true,
+    type: String,
+  },
 });
 
 // creating person model

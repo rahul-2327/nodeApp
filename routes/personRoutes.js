@@ -20,6 +20,7 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
+    console.log(req);
     const persons = await Person.find();
     console.log("data fetched from database");
     res.status(200).json(persons);
