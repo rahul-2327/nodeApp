@@ -4,6 +4,7 @@ const Person = require("./../models/Person");
 
 //--> post method to save data on db
 router.post("/", async (req, res) => {
+  console.log("inside the auth middleware");
   try {
     const data = req.body;
     const newPerson = new Person(data);
